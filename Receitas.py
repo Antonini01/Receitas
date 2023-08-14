@@ -1,9 +1,4 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sat Aug 12 20:56:56 2023
 
-@author: anton
-"""
 print('As quantidades serão dadas em gramas ou ml')
 
 receitas = {
