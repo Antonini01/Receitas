@@ -9,11 +9,11 @@ print('As quantidades serão dadas em gramas ou ml')
 receitas = {
     
     "omelete": {"ovo": 200, "leite": 100, "sal": 1,"manteiga": 100, "pimenta": 100},
-    "pizza": {"massa de pizza": 100, "molho de tomate": 100, "mussarela": 100, "tomate": 100, "azeitona": 100},
+    "pizza": {"massa de pizza": 100, "molho de tomate": 100, "queijo": 100, "tomate": 100, "azeitona": 100},
     "pao de queijo": {"polvilho doce": 100, "queijo": 100, "ovo": 200, "manteiga": 100},
     "bolo de cenoura": {"cenoura": 200, "acucar": 200, "farinha de trigo": 300, "oleo": 100, "ovo": 400},
     "arroz com feijao": {"arroz": 200, "feijao": 100, "cebola": 100, "alho": 200},
-    "macarrao com molho branco": {"macarrao": 100, "leite": 100, "manteiga": 100, "farinha de trigo": 100, "queijo ralado": 100},
+    "macarrao com molho branco": {"macarrao": 100, "leite": 100, "manteiga": 100, "farinha de trigo": 100, "queijo": 100},
     "sopa de legumes": {"batata": 200, "cenoura": 200, "cebola": 100, "alho": 200, "agua": 400}
 }
 
