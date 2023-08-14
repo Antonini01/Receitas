@@ -54,24 +54,8 @@ def encontrar_receitas(ingredientes): # Essa função analisa se o usuário digi
     return receitas_encontradas
     
 def imprimir_informacoes(receitas_encontradas, ingredientes): # Esse é o ponto crítico, a função mais importante e complexa do código!!
-    if len(receitas_encontradas) == 1: # Quando o comprimento da lista criada no def anterior for equivalente a 1
-       print(f"A receita encontrada é {receitas_encontradas[0]}.") # a receita será mostrada ao usuário e, além disso, analisaremos
-                                                                   # se há ingredientes extras a serem retirados.
-       ingredientes_receita = receitas[receitas_encontradas[0]] # Guarda na variável ingredientes_receita
-                                                                # os ingredientes e as quantidades (do dicionário receitas) 
-                                                                # da receita encontrada 
-       ingredientes_extras = [] 
-       for ingrediente in ingredientes:   # Itera o dicionário ingredientes
-           if ingrediente not in ingredientes_receita:    # Encontra os ingredientes que não constam no dicionário ingredientes_receita
-               ingredientes_extras.append(ingrediente) 
     
-       if ingredientes_extras != []: # Condicional importante para não executar sempre o print abaixo. 
-                                     # Será executado apenas quando tiver ingredientes extras
-           print(f"É necessário retirar: {', '.join(ingredientes_extras)}.")
-           
-   # ------------------------------------------------------------------------------------------------------------------
-
-    elif len(receitas_encontradas) == 0:  # Sem dúvidas, essa parte é o cerne do código. A maioria das informações inseridas pelo usuário
+    if len(receitas_encontradas) == 0:  # Sem dúvidas, essa parte é o cerne do código. A maioria das informações inseridas pelo usuário
                                           # chegam aqui. Esse condicional analisa ingredientes faltantes, ingredientes extras 
                                           # e as quantidades necessárias para cada receita.
                                           # Será analisado receita a receita.
@@ -131,19 +115,21 @@ def imprimir_informacoes(receitas_encontradas, ingredientes): # Esse é o ponto 
         if len(ingredientes_faltantes) == 0: # se a lista intersecao_ingredientes for vazia, a lista ingredientes_faltantes também será
             print("\nNão encontramos uma receita que possa ser feita com esses ingredientes. \n")
                 
-    else:    # A execução dessa passagem é similar ao if da linha 62. Aqui considera a lista receitas_encontradas > 1
-        for i in range(len(receitas_encontradas)):
-            print(f"\nA receita encontrada é {receitas_encontradas[i]}.")
-            ingredientes_receita = receitas[receitas_encontradas[i]]
-            
+    else:   # Quando o comprimento da lista criada no def anterior for equivalente a 1 ou maior
+       for i in range(len(receitas_encontradas)): 
+           print(f"A receita encontrada é {receitas_encontradas[i]}.") # a receita será mostrada ao usuário e, além disso, analisaremos
+                                                                       # se há ingredientes extras a serem retirados.
+           ingredientes_receita = receitas[receitas_encontradas[i]]    # Guarda na variável ingredientes_receita
+                                                                       # os ingredientes e as quantidades (do dicionário receitas) 
+                                                                       # da receita encontrada 
+           ingredientes_extras = [] 
+           for ingrediente in ingredientes:   # Itera o dicionário ingredientes
+               if ingrediente not in ingredientes_receita:    # Encontra os ingredientes que não constam no dicionário ingredientes_receita
+                   ingredientes_extras.append(ingrediente) 
         
-            ingredientes_extras = [] 
-            for ingrediente in ingredientes:   
-                if ingrediente not in ingredientes_receita:    
-                    ingredientes_extras.append(ingrediente) 
-         
-            if ingredientes_extras != []:
-                print(f"É necessário retirar: {', '.join(ingredientes_extras)}.\n")
+           if ingredientes_extras != []: # Condicional importante para não executar sempre o print abaixo. 
+                                         # Será executado apenas quando tiver ingredientes extras
+               print(f"É necessário retirar: {', '.join(ingredientes_extras)}.")
         
 def imprimir_receitas_prontas():
 
