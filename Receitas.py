@@ -68,7 +68,7 @@ def imprimir_informacoes(receitas_encontradas, ingredientes): # Esse é o ponto 
             intersecao_ingredientes = [] # Essa lista é muito importante. Ela irá evitar que as passagens seguintes sejam executadas
                                          # caso o usuário não tenha digitado nenhum ingrediente que conste no banco de dados.
                                          # Vamos supor que o usuário digitou rúcula. O comprimento dessa lista será 0, pulando todas
-                                         # as passagens dentro do if da linha 93 indo direto para o if da linha 131
+                                         # as passagens dentro do if da linha 77 indo direto para o if da linha 115
             
             for ingrediente in receita_ingredientes:
                 if ingrediente in ingredientes:
